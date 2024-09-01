@@ -3,9 +3,10 @@ import React from 'react';
 import App from './App';
 
 async function enableMocking() {
-  if (process.env.NODE_ENV !== 'development') {
-    return;
-  }
+  // TODO: Enable mocking only in development mode once Backend is ready
+  // if (process.env.NODE_ENV !== 'development') {
+  //   return;
+  // }
 
   const { worker } = await import('./mocks/browser');
 

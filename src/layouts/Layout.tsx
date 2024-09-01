@@ -44,7 +44,7 @@ export function Layout({ children, title }: LayoutProps) {
       </AppShell.Navbar>
 
       <AppShell.Main className="flex flex-col sm:items-center">
-        {title ? <Title className="text-2xl sm:text-3xl mb-6 mt-4">{title}</Title> : null}
+        {title ? <Title className="mb-6 mt-4 text-2xl sm:text-3xl">{title}</Title> : null}
         {children}
       </AppShell.Main>
     </AppShell>

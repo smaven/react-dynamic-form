@@ -1,5 +1,6 @@
 import { produce } from 'immer';
 import { useReducer } from 'react';
+import { lStorage, StorageKey, StoredQuestionResponse } from '@/lib/local-storage';
 import {
   ResponseConditionOperation as ConditionOperation,
   END_QUESTION_ID,
@@ -166,11 +167,9 @@ function saveResponses(questionsWithResponses: QuestionWithResponse[]) {
       response: q.response,
     }));
 
-  const storedResponses = localStorage.getItem('responses');
-  const responsesToStore = storedResponses ? JSON.parse(storedResponses) : [];
+  const responsesToStore = lStorage.getItem(StorageKey.Responses) ?? [];
   responsesToStore.push({ date: new Date().toISOString(), responses });
-
-  localStorage.setItem('responses', JSON.stringify(responsesToStore));
+  lStorage.setItem(StorageKey.Responses, responsesToStore);
 }
 
 export type QuestionResponse = { id: Question['id'] } & (
@@ -185,8 +184,6 @@ export type QuestionResponse = { id: Question['id'] } & (
 );
 
 export type QuestionWithResponse = Question & QuestionResponse;
-
-export type StoredQuestionResponse = Pick<QuestionWithResponse, 'id' | 'label' | 'response'>;
 
 export type DynamicFormState = {
   questions: Question[];

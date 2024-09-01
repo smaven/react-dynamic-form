@@ -42,9 +42,15 @@ export function Form({ questions }: FormProps) {
       />
 
       {/* Buttons */}
-      <div className="flex gap-4 mt-6 justify-between">
-        {hasPreviousQuestion ? <Button onClick={back}>Back</Button> : null}
-        <Button onClick={handleNext}>{isLastQuestion ? 'Submit' : 'Next'}</Button>
+      <div className="mt-6 flex justify-between gap-4">
+        {hasPreviousQuestion ? (
+          <Button variant="default" onClick={back} aria-label="Back">
+            Back
+          </Button>
+        ) : null}
+        <Button onClick={handleNext} aria-label={isLastQuestion ? 'Submit' : 'Next'}>
+          {isLastQuestion ? 'Submit' : 'Next'}
+        </Button>
       </div>
     </div>
   );

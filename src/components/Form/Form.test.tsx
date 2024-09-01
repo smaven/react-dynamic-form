@@ -30,7 +30,7 @@ describe('Form component', () => {
     expect(previousButton).toBeInTheDocument();
   });
 
-  it('submits the form when go-to question is end', async () => {
+  it('displays thank-you message when the current response ends the form', async () => {
     render(<Form questions={questions} />);
 
     const noRadio = screen.getByRole('radio', { name: 'No' });

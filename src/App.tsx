@@ -1,7 +1,7 @@
-import '@mantine/core/styles.css';
+import './index.css';
 import { MantineProvider } from '@mantine/core';
 import { Router } from './Router';
-import { theme } from './theme';
+import { theme } from './config/theme';
 
 export default function App() {
   return (

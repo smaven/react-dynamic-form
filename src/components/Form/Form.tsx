@@ -30,7 +30,11 @@ export function Form({ questions }: FormProps) {
   }
 
   if (hasSubmitted) {
-    return <Text className="text-xl">Thank you for submitting the form 🥳</Text>;
+    return (
+      <Text className="text-xl" data-testid="thank-you-message">
+        Thank you for submitting the form 🥳
+      </Text>
+    );
   }
 
   return (

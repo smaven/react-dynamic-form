@@ -7,6 +7,7 @@
 - Render form questions dynamically
 - Record user answers
 - View history of answers
+- Some tests have also been written for the Form component
 
 ## Tech Stack
 

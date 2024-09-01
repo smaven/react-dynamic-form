@@ -1,13 +1,22 @@
-# Mantine Vite template
+# Dynamic Form in React
 
 ## Features
 
-This template comes with the following features:
+- Get form data from API
+  - For now, we are using Mock Service Worker to mock the API
+- Render form questions dynamically
+- Record user answers
+- View history of answers
 
-- [PostCSS](https://postcss.org/) with [mantine-postcss-preset](https://mantine.dev/styles/postcss-preset)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
-- ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+## Tech Stack
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Mantine
+- Vitest
+- Mock Service Worker
 
 ## npm scripts
 

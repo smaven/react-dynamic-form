@@ -17,5 +17,6 @@ module.exports = {
       },
     ],
     'consistent-return': 'off',
+    'no-case-declarations': 'off',
   },
 };

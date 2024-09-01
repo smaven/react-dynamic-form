@@ -3,7 +3,7 @@ export enum QuestionType {
   Number = 'number',
 }
 
-export type GoToQuestionId = string | null;
+export type GoToQuestionId = string;
 
 export enum ResponseConditionOperation {
   GreaterThan = '>',
@@ -19,6 +19,7 @@ export type ResponseCondition = {
 
 export type Question = {
   id: string;
+  label: string;
 } & (
   | {
       type: QuestionType.YesNo;
@@ -36,3 +37,5 @@ export type Question = {
       responseActions: ResponseCondition[];
     }
 );
+
+export const END_QUESTION_ID = 'END';

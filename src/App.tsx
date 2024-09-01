@@ -5,7 +5,7 @@ import { theme } from './config/theme';
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="auto">
       <Router />
     </MantineProvider>
   );

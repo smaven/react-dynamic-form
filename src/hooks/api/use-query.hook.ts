@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 // provides this functionality and more.
 
 export function useQuery<T, U>(queryFn: (data?: T) => Promise<U>) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
   const [data, setData] = useState<U | null>(null);
 
@@ -15,10 +15,11 @@ export function useQuery<T, U>(queryFn: (data?: T) => Promise<U>) {
     queryFn()
       .then((result) => {
         setData(result);
-        setLoading(false);
       })
       .catch((err) => {
         setError(err);
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, []);

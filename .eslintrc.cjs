@@ -16,5 +16,6 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    'consistent-return': 'off',
   },
 };

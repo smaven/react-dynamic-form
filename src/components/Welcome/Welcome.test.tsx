@@ -9,4 +9,14 @@ describe('Welcome component', () => {
       'https://mantine.dev/guides/vite/'
     );
   });
+
+  it('shows loading message', () => {
+    render(<Welcome />);
+    expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+
+  it('greets user by name', async () => {
+    render(<Welcome />);
+    expect(await screen.findByText('Hello John Maverick 👋')).toBeInTheDocument();
+  });
 });
